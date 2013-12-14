@@ -34,7 +34,7 @@ var fs       = require('fs'),
                         m1[d[j]] = m1[d[j]] || {};
                         m1 = m1[d[j]];
                     }
-                    m1[basename(entries[i], extname(entries[i]))] = require(p);
+                    m1[basename(entries[i], extname(entries[i]))] = require(path.resolve(p));
                 }
             
             }
@@ -59,7 +59,7 @@ var fs       = require('fs'),
                 if (!e || extname(p) === e) {
                     var n = d.length ? [d.join(sep), basename(entries[i], extname(entries[i]))].join(sep)
                                      : basename(entries[i], extname(entries[i]));
-                    m[n] = require(p);
+                    m[n] = require(path.resolve(p));
                 }
             
             }
