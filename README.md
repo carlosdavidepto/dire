@@ -87,6 +87,8 @@ Credits
 
 This module is largely inspired by Troy Goode's [node-require-directory](https://github.com/TroyGoode/node-require-directory)
 
+Thanks to @romanshestilovski for spotting and fixing the local path bug.
+
 Bugs/Feature requests
 ---------------------
 
