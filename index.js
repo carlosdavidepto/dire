@@ -6,7 +6,7 @@ var fs       = require('fs'),
     basename = path.basename,
     extname  = path.extname,
     resolve  = path.resolve,
-    sep      = path.sep,
+    sep      = '/',
 
     dire = function (root, flat, ext) {
         var m = {};
