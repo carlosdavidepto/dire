@@ -5,7 +5,8 @@ var fs       = require('fs'),
     dirname  = path.dirname,
     basename = path.basename,
     extname  = path.extname,
-    sep      = path.sep,
+    resolve  = path.resolve,
+    sep      = '/',
 
     dire = function (root, flat, ext) {
         var m = {};
@@ -34,7 +35,7 @@ var fs       = require('fs'),
                         m1[d[j]] = m1[d[j]] || {};
                         m1 = m1[d[j]];
                     }
-                    m1[basename(entries[i], extname(entries[i]))] = require(path.resolve(p));
+                    m1[basename(entries[i], extname(entries[i]))] = require(resolve(p));
                 }
             
             }
@@ -59,7 +60,7 @@ var fs       = require('fs'),
                 if (!e || extname(p) === e) {
                     var n = d.length ? [d.join(sep), basename(entries[i], extname(entries[i]))].join(sep)
                                      : basename(entries[i], extname(entries[i]));
-                    m[n] = require(path.resolve(p));
+                    m[n] = require(resolve(p));
                 }
             
             }
